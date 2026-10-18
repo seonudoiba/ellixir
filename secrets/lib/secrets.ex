@@ -44,7 +44,9 @@ defmodule Secrets do
   def secret_combine(secret_function1, secret_function2) do
     # Please implement the secret_combine/2 function
     fn val ->
-       secret_function2.(secret_function1.(val))
+      val
+      |> secret_function1.()
+      |> secret_function2.()
     end
 
   end
