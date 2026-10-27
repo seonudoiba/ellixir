@@ -1,14 +1,22 @@
 defmodule BirdCount do
   def today(list) do
     # Please implement the today/1 function
-    [head | _] = list
-    head
+    if list == [] do
+      nil
+    else
+      [head | _] = list
+      head
+    end
   end
 
   def increment_day_count(list) do
     # Please implement the increment_day_count/1 function
-    [head | tail] = list
-    [head + 1 | tail]
+    if list == [] do
+      [1]
+    else
+      [head | tail] = list
+      [head + 1 | tail]
+    end
   end
 
   def has_day_without_birds?([]) do
